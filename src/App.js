@@ -1,7 +1,10 @@
+import Landing from './pages/landing'
+
+
 function App() {
   return (
     <div>
-      this is a test
+      <Landing/>
     </div>
   );
 }
