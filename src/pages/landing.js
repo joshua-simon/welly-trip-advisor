@@ -2,7 +2,7 @@ import {firebase} from '../firebaseConfig'
 import { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Options from '../options'
-import Reccomended from '../components/recommended';
+import Reccomended from '../components/Recommended'
 
 const Landing = () => {
      

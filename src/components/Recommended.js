@@ -1,4 +1,4 @@
-import VenueCard from '../VenueCard/index'
+import VenueCard from './VenueCard/index'
 
 const Reccomended = () => {
     return(

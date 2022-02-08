@@ -2,9 +2,10 @@ import { useState,useEffect } from 'react'
 import {getVenues} from '../../services/firebase.js'
 
 const Photo = () => {
-    const [ venues,setVenues ] = useState(null)
+    const [ venues,setVenues ] = useState([])
 
     useEffect(() => {
+        console.log('it got here')
         async function getAllVenues(){
             const response = await getVenues()
             await setVenues(response)
@@ -12,13 +13,10 @@ const Photo = () => {
         getAllVenues()
     },[])
 
-    const response = getVenues()
-    console.log(response)
     console.log(venues)
-
     return(
-        <div>
-            {venues.map((item) => {
+        <div className = 'venueCard-container'>
+            {venues && venues.map((item) => {
                 return(<img src = {item.photoUrl}/>)
             })}
         </div>
