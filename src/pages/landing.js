@@ -1,5 +1,8 @@
 import {firebase} from '../firebaseConfig'
 import { useEffect, useState } from 'react';
+import Header from '../components/Header';
+import Options from '../options'
+import Reccomended from '../components/recommended';
 
 const Landing = () => {
      
@@ -15,7 +18,9 @@ const Landing = () => {
 
     return(
         <div>
-            this is the landing
+            <Header/>
+            <Options/>
+           <Reccomended/>
         </div>
     )
 }

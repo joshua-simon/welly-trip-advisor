@@ -1,0 +1,43 @@
+@import url(//db.onlinewebfonts.com/c/05428692254b58ccb090358a3dfecfff?family=Sofia+Pro);
+@font-face {font-family: "Sofia Pro"; src: url("//db.onlinewebfonts.com/t/05428692254b58ccb090358a3dfecfff.eot"); src: url("//db.onlinewebfonts.com/t/05428692254b58ccb090358a3dfecfff.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/05428692254b58ccb090358a3dfecfff.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/05428692254b58ccb090358a3dfecfff.woff") format("woff"), url("//db.onlinewebfonts.com/t/05428692254b58ccb090358a3dfecfff.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/05428692254b58ccb090358a3dfecfff.svg#Sofia Pro") format("svg"); }
+
+body{
+padding:0;
+margin:0;
+font-family: 'Sofia Pro';
+background-color: #e9ebee;
+}
+
+/* Header */
+header{
+height:4rem;
+border-bottom: 1px solid gray;
+background-color: white;
+}
+
+.container{
+display:flex;
+justify-content: space-between;
+height:100%;
+}
+.logo{
+display:flex;
+justify-content: center;
+padding-left:1%;
+}
+.logo p{
+    display:flex;
+    align-items: center;
+    margin-left:5%;
+}
+
+.svg-container{
+display:flex;
+justify-content: space-between;
+align-items: center;
+}
+svg{
+height:60%;
+padding:1rem;
+}
+
