@@ -5,11 +5,6 @@ import VenueDetails from '../components/VenueDetails'
 
 const Venue = () => {
 
-    //   const [...venueData] = venues.map(venue => {
-    //       const { id } = venue
-    //       return {id:id}
-    //   })
-
     return(
         <div>
             <VenueDetails />
