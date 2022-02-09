@@ -3,9 +3,7 @@ import Landing from './pages/landing'
 import Venue from './pages/venues'
 import './styles.css';
 
-
 function App() {
-  const test = 'this is a test'
   return (
     <Router>
       <div>

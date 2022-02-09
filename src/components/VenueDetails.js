@@ -1,8 +1,14 @@
 
-const VenueDetails = () => {
+
+const VenueDetails = ({filteredVenue}) => {
+
     return(
         <div>
-            this is the venue page 
+            {
+                filteredVenue.map(venue => {
+                    return <p>{venue.name}</p>
+                })
+            }
         </div>
     )
 }

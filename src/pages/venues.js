@@ -1,13 +1,19 @@
-import { useState,useEffect } from 'react'
-import { getVenues } from '../services/firebase'
-import { firebase } from '../firebaseConfig'
 import VenueDetails from '../components/VenueDetails'
+import { useParams } from 'react-router-dom';
+import { useVenues } from '../useVenue';
 
 const Venue = () => {
 
+    let {id} = useParams()
+    const { venueData } = useVenues()
+
+    const filteredVenue = venueData.filter(item => {
+        return item.id == id
+    })
+
     return(
         <div>
-            <VenueDetails />
+            <VenueDetails filteredVenue = {filteredVenue}/>
         </div>
     )
 }
