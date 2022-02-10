@@ -194,3 +194,12 @@ font-family: Helvetica;
     padding-right:1%;
 }
 
+.venue-page-mid{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+.venue-page-section{
+    background-color:white;
+}

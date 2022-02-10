@@ -6,6 +6,7 @@ import MidSection from '../components/venue-page/MidSection';
 import ReviewSection from '../components/venue-page/ReviewSection';
 
 
+
 const Venue = () => {
 
     let {id} = useParams()
@@ -19,7 +20,7 @@ const Venue = () => {
         <div>
             <Header/>
             <VenueDetails filteredVenue = {filteredVenue}/>
-            <MidSection/>
+            <MidSection filteredVenue = {filteredVenue}/>
             <ReviewSection/>
         </div>
     )
