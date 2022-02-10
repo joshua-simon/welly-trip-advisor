@@ -32,7 +32,6 @@ export function useVenues (){
       id: venue.id,
     })
   });
-  console.log(venueData)
   return {venueData}
 };
 
