@@ -17,8 +17,8 @@ const testData = ['Food','Service','Value','Atmosphere']
                 <div>
                     {testData.map((item) => {
                         return(
-                            <div>
-                                <p>{item}</p>
+                            <div className="ratings-item">
+                                <p>{item}</p> 
                                 <p>{convertToStars(venue.averageRating)}</p>
                             </div>
                         )
@@ -26,8 +26,23 @@ const testData = ['Food','Service','Value','Atmosphere']
                 </div>
               </div>
             </div>
-            <div className="venue-page-section mid">mid</div>
-            <div className="venue-page-section right">right</div>
+            <div className="venue-page-section mid">
+                <h2>Details</h2>
+                <div className="details-container">
+                    <div className="details-item">
+                        <h3>Cuisines</h3>
+                        <p>Cafe</p>
+                    </div>
+                    <div className="details-item">
+                        <h3>Special diets</h3>
+                        <p>Vegetarian friendly, vegan options, gluten-free options</p>
+                    </div>
+                    <div className="details-item">
+                        <h3>Meals</h3>
+                        <p>Breakfast, Brunch, Lunch, After hours</p>
+                    </div>
+                </div>
+            </div>
           </>
         );
       })}

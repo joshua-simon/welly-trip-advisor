@@ -5,8 +5,6 @@ import VenueDetails from '../components/venue-page/VenueDetails'
 import MidSection from '../components/venue-page/MidSection';
 import ReviewSection from '../components/venue-page/ReviewSection';
 
-
-
 const Venue = () => {
 
     let {id} = useParams()
