@@ -1,9 +1,12 @@
 import { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { firebase } from '../firebaseConfig'
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 
 const Login = () => {
+
+    const auth = getAuth()
+    const user = auth.currentUser
+    console.log(`this is user login ${user}`)
 
     const [{ email, password },setFormDetails] = useState({ email:'', password:''})
     const navigate = useNavigate()
@@ -17,13 +20,21 @@ const Login = () => {
         }))
     }
 
-const handleSubmit =  async (e) => {
+const handleSubmit =   (e) => {
     e.preventDefault()
-    navigate('/')
+    const auth = getAuth()
+    signInWithEmailAndPassword(auth,email,password)
+    .then(() => {
+        console.log('logged in')
+        navigate('/')
+    })
+    .catch(err => {
+        console.log(err)
+    })
 }
 
     useEffect(() => {
-        document.title = 'Sign Up - Wellyadvisor'
+        document.title = 'Login - Wellyadvisor'
     },[])
 
     return(

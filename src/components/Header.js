@@ -1,6 +1,19 @@
 import { Link } from 'react-router-dom'
+import { getAuth, signOut } from "firebase/auth";
 
 const Header = () => {
+
+const handleClick = (e) => {
+  e.preventDefault()
+  const auth = getAuth()
+  signOut(auth).then(() => {
+    console.log('signed out')
+  })
+  .catch(err => {
+    console.log(err)
+  })
+}
+
     return(
         <header>
             <div className = 'container'>
@@ -32,6 +45,8 @@ const Header = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    onClick = {handleClick}
+                    style = {{cursor: 'pointer'}}
                   >
                     <path
                       strokeLinecap="round"
