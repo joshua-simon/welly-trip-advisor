@@ -50,6 +50,16 @@ height:60%;
 padding:1rem;
 }
 
+.svg-container a{
+    text-decoration: none;
+    padding:2%;
+    transform: translateX(-10%);
+    background-color:rgb(110, 110, 248);
+    color:white;
+    border-radius: 5%;
+    margin:1%;
+    font-size: small;
+}
 /* Header */
 
 .options-container{
