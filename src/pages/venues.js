@@ -19,7 +19,7 @@ const Venue = () => {
             <Header/>
             <VenueDetails filteredVenue = {filteredVenue}/>
             <MidSection filteredVenue = {filteredVenue}/>
-            <ReviewSection/>
+            <ReviewSection filteredVenue = {filteredVenue}/>
         </div>
     )
 }

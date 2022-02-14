@@ -1,7 +1,13 @@
-const ReviewSection = () => {
+
+const ReviewSection = ({ filteredVenue }) => {
     return(
         <div>
-            ReviewSection
+            {filteredVenue.map((venue) => {
+                       <div className="review-section-header">
+                       <h1>Reviews</h1>
+       
+                   </div>
+            })}
         </div>
     )
 }

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 
 const Header = () => {
     return(
@@ -40,6 +41,10 @@ const Header = () => {
                     />
                     </svg>
                     </>
+                    <button>Login</button>
+                    <Link to = '/signup'>
+                      <button>Sign up</button>
+                    </Link>
                 </div>
             </div>
         </header>
