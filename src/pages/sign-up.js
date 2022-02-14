@@ -15,12 +15,20 @@ const SignUp = () => {
         }))
     }
 
-    const handleSubmit =  (e) => {
-        e.preventDefault()
-        const auth = getAuth()
-        createUserWithEmailAndPassword(auth,email,password)
-        .then(console.log('user signed up'))
-    }
+const handleSubmit =  async (e) => {
+    e.preventDefault()
+    const auth = getAuth()
+    const createdUserResult = createUserWithEmailAndPassword(auth,email,password)     
+    await firebase
+    .firestore()
+    .collection('users')
+    .add({
+        dateCreated: Date.now(),
+        emailAddress: email,
+        username: userName,
+        userId: (await createdUserResult).user.uid
+    })
+}
 
     useEffect(() => {
         document.title = 'Sign Up - Wellyadvisor'
