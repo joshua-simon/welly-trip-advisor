@@ -35,7 +35,8 @@ const handleSubmit =  async (e) => {
     },[])
 
     return(
-        <div>
+        <div className = 'signup-container'>
+            <p>Wellyadvisor</p>
             <form onSubmit = {handleSubmit} method = 'POST'>
                 <input
                     type = 'text'

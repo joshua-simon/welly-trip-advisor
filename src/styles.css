@@ -231,3 +231,47 @@ font-family: Helvetica;
     flex-direction:column;
     font-family: Helvetica;
 }
+
+
+.signup-container{
+    width:20%;
+    margin:auto;
+    display:flex;
+    flex-direction: column;
+    text-align:center;
+    margin-top:10%;
+    border: 1px solid rgb(179, 176, 176);
+    padding:1%;
+    background:white;
+    align-items: center;
+    border-radius: 2%;
+}
+
+.signup-container form{
+    display:flex;
+    flex-direction: column;
+    width:80%;
+    margin-top:1em;
+}
+
+.signup-container input {
+    margin:2%;
+    border:1px solid rgb(179, 176, 176);
+    border-radius: 2%;
+    padding:2%;
+}
+
+.signup-container button {
+    background-color: rgb(78, 78, 241);
+    border: none;
+    font-family: 'Sofia Pro';
+    color:white;
+    border-radius:3%;
+    padding:2%;
+    cursor: pointer;
+}
+
+.signup-container p {
+    color:#587a25;
+    font-size: x-large;
+}
