@@ -7,7 +7,6 @@ const Header =  () => {
 
 const { activeUser } =  useContext(FirebaseContext)
 
-
 const handleClick = (e) => {
   e.preventDefault()
   const auth = getAuth()

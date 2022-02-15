@@ -1,13 +1,12 @@
-import { useEffect,useState } from 'react'
-import { firebase } from './firebaseConfig';
+import { useState } from 'react'
 import { auth } from "./firebaseConfig";
 import { onAuthStateChanged } from 'firebase/auth';
 import { createContext } from "react";
 
 export const FirebaseContext = createContext()
 
-
 const FirebaseContextProvider = (props) => {
+    
   const [activeUser, setActiveUser] = useState(null);
 
 onAuthStateChanged(auth, (user) => {
