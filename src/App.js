@@ -17,7 +17,7 @@ function App() {
           <Route path = '/venue/:id' element = {<Venue/>}/>
           <Route path = '/signup' element = {<SignUp/>}/>
           <Route path = '/login' element = {<Login/>}/>
-          <Route path = '/write-review' element = {<WriteReview/>}/>
+          <Route path = '/write-review/:id' element = {<WriteReview/>}/>
         </Routes>
       </div>
     </Router>

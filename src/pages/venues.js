@@ -14,12 +14,13 @@ const Venue = () => {
         return item.id === id
     })
 
+    console.log(`venue id : ${id}`)
     return(
         <div>
             <Header/>
             <VenueDetails filteredVenue = {filteredVenue}/>
             <MidSection filteredVenue = {filteredVenue}/>
-            <ReviewSection filteredVenue = {filteredVenue}/>
+            <ReviewSection filteredVenue = {filteredVenue} id = {id}/>
         </div>
     )
 }
