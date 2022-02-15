@@ -1,8 +1,11 @@
 import { useParams } from 'react-router-dom';
+import { useState } from 'react'
 import { useVenues } from '../useVenue'
 import Header from '../components/Header'
 
 const WriteReview = () => {
+
+    const [ {title,review,rating}, setReview ] = useState({title:'', review:'', rating:''})
 
     let {id} = useParams()
     const { venueData } = useVenues()
@@ -10,6 +13,19 @@ const WriteReview = () => {
     const filteredVenue = venueData.filter(item => {
         return item.id === id
     })
+
+    const handleChange = (e) => {
+        const { name,value } = e.target
+        e.preventDefault()
+        setReview(prevState => ({
+            ...prevState,
+            [name]:value
+        }))
+    }
+
+    console.log(`title: ${title}`)
+    console.log(`review: ${review}`)
+    console.log(`rating: ${rating}`)
 
     return(
         <div>
@@ -26,6 +42,26 @@ const WriteReview = () => {
                         </div>
                     )
                 })}
+            </div>
+            <div className='write-review-form'>
+                <form>
+                    <label>
+                        Rating <br></br>
+                        <select name = 'rating' onChange = {handleChange}>
+                            <option value = '1'>1</option>
+                            <option value = '2'>2</option>
+                            <option value = '3'>3</option>
+                            <option value = '4'>4</option>
+                            <option value = '5'>5</option>
+                        </select>
+                    </label>
+                    <label>Title of your review <br></br>
+                        <input type = 'text' name = 'title' value = {title} onChange = {handleChange}/>
+                    </label>
+                    <label >Your review <br></br>
+                        <input type = 'text' name = 'review' value = {review} onChange = {handleChange}/>
+                    </label>
+                </form>
             </div>
         </div>
     )
