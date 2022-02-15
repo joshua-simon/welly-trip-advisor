@@ -14,7 +14,6 @@ const Venue = () => {
         return item.id === id
     })
 
-    console.log(`venue id : ${id}`)
     return(
         <div>
             <Header/>

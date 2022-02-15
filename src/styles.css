@@ -287,3 +287,38 @@ font-family: Helvetica;
     color:#587a25;
     font-size: x-large;
 }
+
+/* Write review section */
+
+.write-review-top{
+    background-color: white;
+    margin-left:10%;
+    margin-right:10%;
+    margin-top:1em;
+    border-radius:1%;
+}
+
+.write-review-top-img{
+    display:flex;
+    flex-direction: row;
+    height:10em;
+    width:90%;
+    padding:2%;
+}
+
+.write-review-top-img img {
+    aspect-ratio: 1;
+}
+
+.write-review-top-text{
+    display:flex;
+    flex-direction:column;
+    margin-left:5%;
+    justify-content: center;
+}
+
+.write-review-top-text p{
+    margin-top:1%;
+    margin-bottom:1%;
+    color:#587a25;
+}
