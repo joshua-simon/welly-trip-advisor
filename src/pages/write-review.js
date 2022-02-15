@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState } from 'react'
 import { useVenues } from '../useVenue'
+import  { firebase,FieldValue } from '../firebaseConfig'
 import Header from '../components/Header'
 
 const WriteReview = () => {
@@ -21,6 +22,22 @@ const WriteReview = () => {
             ...prevState,
             [name]:value
         }))
+    }
+
+    const handleSubmit = (e) => {
+        const newReview = {
+            title:title,
+            review:review,
+            rating:rating
+        }
+        e.preventDefault()
+        firebase
+        .firestore()
+        .collection('venues')
+        .doc(id)
+        .update({
+            reviews: FieldValue.arrayUnion(newReview)
+        })
     }
 
     console.log(`title: ${title}`)
@@ -44,7 +61,7 @@ const WriteReview = () => {
                 })}
             </div>
             <div className='write-review-form'>
-                <form>
+                <form onSubmit = {handleSubmit}>
                     <label>
                         Rating <br></br>
                         <select name = 'rating' onChange = {handleChange}>
@@ -61,6 +78,7 @@ const WriteReview = () => {
                     <label >Your review <br></br>
                         <input type = 'text' name = 'review' value = {review} onChange = {handleChange}/>
                     </label>
+                    <button type = 'submit'>Submit</button>
                 </form>
             </div>
         </div>
