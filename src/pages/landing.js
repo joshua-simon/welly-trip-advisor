@@ -4,9 +4,6 @@ import Reccomended from '../components/Recommended'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 
 const Landing = () => {
-    const auth = getAuth()
-    const user = auth.currentUser
-    console.log(`this is user ${user.uid}`)
     return(
         <div>
             <Header/>

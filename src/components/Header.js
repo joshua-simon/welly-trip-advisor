@@ -1,7 +1,12 @@
+import { useContext } from 'react'
+import { FirebaseContext } from '../FirebaseContext';
 import { Link } from 'react-router-dom'
 import { getAuth, signOut } from "firebase/auth";
 
-const Header = () => {
+const Header =  () => {
+
+const { activeUser } =  useContext(FirebaseContext)
+
 
 const handleClick = (e) => {
   e.preventDefault()
@@ -12,6 +17,7 @@ const handleClick = (e) => {
   .catch(err => {
     console.log(err)
   })
+  alert('You have signed out of Wellyadvisor')
 }
 
     return(
@@ -55,9 +61,7 @@ const handleClick = (e) => {
                       d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
                     />
                     </svg>
-                    <Link to = '/login'>
-                      Login
-                    </Link>
+                    {!activeUser ? <Link to = '/login'>Login</Link> : null }
                     <Link to = '/signup'>
                       Register
                     </Link>
