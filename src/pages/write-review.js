@@ -6,7 +6,20 @@ import Header from '../components/Header'
 
 const WriteReview = () => {
 
-    const [ {title,review,rating}, setReview ] = useState({title:'', review:'', rating:''})
+    const [ {
+        title,
+        review,
+        rating,
+        ratingService,
+        ratingFood,
+        ratingValue
+    }, setReview ] = useState({
+        title:'', 
+        review:'', 
+        rating:'',
+        ratingService:'',
+        ratingFood:'',
+        ratingValue:''})
 
     let {id} = useParams()
     const { venueData } = useVenues()
@@ -28,7 +41,10 @@ const WriteReview = () => {
         const newReview = {
             title:title,
             review:review,
-            rating:rating
+            rating:rating,
+            ratingService: ratingService,
+            ratingFood: ratingFood,
+            ratingValue:ratingValue
         }
         e.preventDefault()
         firebase
@@ -62,8 +78,9 @@ const WriteReview = () => {
             </div>
             <div className='write-review-form'>
                 <form onSubmit = {handleSubmit}>
+                <h2>Your first hand experiences help other travellers!</h2>
                     <label>
-                        Rating <br></br>
+                        Your overall rating of this venue <br></br>
                         <select name = 'rating' onChange = {handleChange}>
                             <option value = '1'>1</option>
                             <option value = '2'>2</option>
@@ -76,7 +93,37 @@ const WriteReview = () => {
                         <input type = 'text' name = 'title' value = {title} onChange = {handleChange}/>
                     </label>
                     <label >Your review <br></br>
-                        <input type = 'text' name = 'review' value = {review} onChange = {handleChange}/>
+                        <textarea type = 'text' name = 'review' value = {review} onChange = {handleChange}/>
+                    </label>
+                    <label>
+                        Service <br></br>
+                        <select name = 'ratingService' onChange = {handleChange}>
+                            <option value = '1'>1</option>
+                            <option value = '2'>2</option>
+                            <option value = '3'>3</option>
+                            <option value = '4'>4</option>
+                            <option value = '5'>5</option>
+                        </select>
+                    </label>
+                    <label>
+                        Food <br></br>
+                        <select name = 'ratingFood' onChange = {handleChange}>
+                            <option value = '1'>1</option>
+                            <option value = '2'>2</option>
+                            <option value = '3'>3</option>
+                            <option value = '4'>4</option>
+                            <option value = '5'>5</option>
+                        </select>
+                    </label>
+                    <label>
+                        Value <br></br>
+                        <select name = 'ratingValue' onChange = {handleChange}>
+                            <option value = '1'>1</option>
+                            <option value = '2'>2</option>
+                            <option value = '3'>3</option>
+                            <option value = '4'>4</option>
+                            <option value = '5'>5</option>
+                        </select>
                     </label>
                     <button type = 'submit'>Submit</button>
                 </form>
