@@ -22,7 +22,7 @@ export function useVenues (){
 
   const [...venueData] = venues.map((venue) => {
     
-    const { name, photoUrl, averageRating, numRatings, type } = venue.data();
+    const { name, photoUrl, averageRating, numRatings, type,reviews } = venue.data();
     return ({
       name: name,
       photoUrl: photoUrl,
@@ -30,6 +30,7 @@ export function useVenues (){
       numRatings: numRatings,
       type: type,
       id: venue.id,
+      reviews:reviews
     })
   });
   return {venueData}

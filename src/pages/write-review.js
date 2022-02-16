@@ -1,13 +1,17 @@
 import { useParams,useNavigate } from 'react-router-dom';
-import { useState } from 'react'
+import { getAuth } from 'firebase/auth'
+import { useState,useContext, useEffect } from 'react'
+import { FirebaseContext } from '../FirebaseContext';
 import { useVenues } from '../useVenue'
+import { GetUserById } from '../useUser';
 import  { firebase,FieldValue } from '../firebaseConfig'
 import Header from '../components/Header'
 
-const WriteReview = () => {
+const WriteReview =  () => {
 
     const navigate = useNavigate()
-
+    const { activeUser } = useContext(FirebaseContext)
+    
     const [ {
         title,
         review,
@@ -23,7 +27,9 @@ const WriteReview = () => {
         ratingService:'',
         ratingFood:'',
         ratingValue:'',
-        ratingAtmosphere:''})
+        ratingAtmosphere:'',})
+
+     
 
     let {id} = useParams()
     const { venueData } = useVenues()
@@ -85,7 +91,7 @@ const WriteReview = () => {
             </div>
             <div className='write-review-form'>
                 <form onSubmit = {handleSubmit}>
-                <h2>Your first hand experiences help other travellers!</h2>
+                <h2>Your first hand experiences helps other travellers!</h2>
                     <label>
                         Your overall rating of this venue <br></br>
                         <select name = 'rating' onChange = {handleChange}>
