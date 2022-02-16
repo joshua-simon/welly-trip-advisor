@@ -18,9 +18,14 @@ const ReviewSection =  ({ filteredVenue,id }) => {
               venue.reviews.map((review) => {
                 return(
                   <div className='review-section-reviews-container'>
-                  <p>{review.title}</p>
-                  <p>{convertToStars(review.rating)}</p>
-                  <p>{review.review}</p>
+                    <div className='review-section-reviews-userDetails'>
+                      <p>{`Review by ${review.username}`}</p>
+                    </div>
+                    <div className='review-section-reviews-reviewDetails'>
+                      <p className='child-item'>{convertToStars(review.rating)}</p>
+                      <h3 className='child-item'>{review.title}</h3>
+                      <p className='child-item'>{review.review}</p>
+                    </div>
                   </div>
                 )
               })
