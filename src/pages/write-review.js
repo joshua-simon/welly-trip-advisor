@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
 import { useState } from 'react'
 import { useVenues } from '../useVenue'
 import  { firebase,FieldValue } from '../firebaseConfig'
@@ -6,20 +6,24 @@ import Header from '../components/Header'
 
 const WriteReview = () => {
 
+    const navigate = useNavigate()
+
     const [ {
         title,
         review,
         rating,
         ratingService,
         ratingFood,
-        ratingValue
+        ratingValue,
+        ratingAtmosphere
     }, setReview ] = useState({
         title:'', 
         review:'', 
         rating:'',
         ratingService:'',
         ratingFood:'',
-        ratingValue:''})
+        ratingValue:'',
+        ratingAtmosphere:''})
 
     let {id} = useParams()
     const { venueData } = useVenues()
@@ -37,23 +41,26 @@ const WriteReview = () => {
         }))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         const newReview = {
             title:title,
             review:review,
             rating:rating,
             ratingService: ratingService,
             ratingFood: ratingFood,
-            ratingValue:ratingValue
+            ratingValue:ratingValue,
+            ratingAtmosphere:ratingAtmosphere
         }
         e.preventDefault()
-        firebase
+        await firebase
         .firestore()
         .collection('venues')
         .doc(id)
         .update({
             reviews: FieldValue.arrayUnion(newReview)
         })
+
+        navigate(`/venue/${id}`)
     }
 
     console.log(`title: ${title}`)
@@ -118,6 +125,16 @@ const WriteReview = () => {
                     <label>
                         Value <br></br>
                         <select name = 'ratingValue' onChange = {handleChange}>
+                            <option value = '1'>1</option>
+                            <option value = '2'>2</option>
+                            <option value = '3'>3</option>
+                            <option value = '4'>4</option>
+                            <option value = '5'>5</option>
+                        </select>
+                    </label>
+                    <label>
+                        Atmosphere <br></br>
+                        <select name = 'ratingAtmosphere' onChange = {handleChange}>
                             <option value = '1'>1</option>
                             <option value = '2'>2</option>
                             <option value = '3'>3</option>
