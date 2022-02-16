@@ -3,15 +3,23 @@ import { getAuth } from 'firebase/auth'
 import { useState,useContext, useEffect } from 'react'
 import { FirebaseContext } from '../FirebaseContext';
 import { useVenues } from '../useVenue'
-import { GetUserById } from '../useUser';
+import { GetUsers } from '../useUser';
 import  { firebase,FieldValue } from '../firebaseConfig'
 import Header from '../components/Header'
 
 const WriteReview =  () => {
 
     const navigate = useNavigate()
+
     const { activeUser } = useContext(FirebaseContext)
-    
+    const {uid} = activeUser || {}
+    const { userData } = GetUsers()
+
+    const filteredUser = userData.filter(user => {
+        return user.userId === uid
+     })
+
+
     const [ {
         title,
         review,
@@ -27,7 +35,8 @@ const WriteReview =  () => {
         ratingService:'',
         ratingFood:'',
         ratingValue:'',
-        ratingAtmosphere:'',})
+        ratingAtmosphere:'',
+        })
 
      
 
@@ -37,7 +46,7 @@ const WriteReview =  () => {
     const filteredVenue = venueData.filter(item => {
         return item.id === id
     })
-
+  
     const handleChange = (e) => {
         const { name,value } = e.target
         e.preventDefault()
@@ -55,7 +64,8 @@ const WriteReview =  () => {
             ratingService: ratingService,
             ratingFood: ratingFood,
             ratingValue:ratingValue,
-            ratingAtmosphere:ratingAtmosphere
+            ratingAtmosphere:ratingAtmosphere,
+            username:filteredUser[0].username
         }
         e.preventDefault()
         await firebase
@@ -69,9 +79,6 @@ const WriteReview =  () => {
         navigate(`/venue/${id}`)
     }
 
-    console.log(`title: ${title}`)
-    console.log(`review: ${review}`)
-    console.log(`rating: ${rating}`)
 
     return(
         <div>
