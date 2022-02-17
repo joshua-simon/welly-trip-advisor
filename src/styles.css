@@ -40,17 +40,13 @@ font-size: x-large;
 }
 
 .svg-container{
-display:flex;
-justify-content: space-between;
-align-items: center;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
 }
 
-svg{
-height:60%;
-padding:1rem;
-}
 
-.svg-container a{
+.svg-container .login-register{
     text-decoration: none;
     padding:2%;
     transform: translateX(-10%);
@@ -60,6 +56,9 @@ padding:1rem;
     margin:1%;
     font-size: small;
 }
+
+
+
 /* Header */
 
 .options-container{
@@ -84,6 +83,8 @@ padding:1rem;
     border-radius:5%;
     margin:0.5em;
     cursor: pointer;
+    text-decoration: none;
+    color:black;
 }
 
 .options-item img{
@@ -299,7 +300,7 @@ font-family: Helvetica;
     color:#587a25;
     justify-content: space-between;
     align-items: center;
-    border-bottom:1px solid rgb(177, 175, 175);
+    border-bottom:1px solid rgb(223, 217, 217)
 }
 
 .review-section-header a{
@@ -335,7 +336,7 @@ margin-bottom:5em;
     background-color: white;
     margin-right:10%;
     padding:1%;
-    border-bottom:1px solid rgb(177, 175, 175);
+    border-bottom:1px solid rgb(223, 217, 217);
 }
 
 

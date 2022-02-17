@@ -18,21 +18,6 @@ const MidSection = ({ filteredVenue }) => {
               </p>
               <div className="ratings">
                 <h3>Ratings</h3>
-                  {/* {venue.reviews.map((review) => {
-                    return(
-                      <div className="ratings-item">
-                    <p>Food</p> 
-                  <p>{convertToStars(review.ratingFood)}</p>
-                  <p>Service</p>
-                  <p>{convertToStars(review.ratingService)}</p>
-                  <p>Value</p>
-                  <p>{convertToStars(review.ratingValue)}</p>
-                  <p>Atmosphere</p>
-                  <p>{convertToStars(review.ratingAtmosphere)}</p>
-                    </div>
-                    )
-                  })}
-    */}
               </div>
             </div>
             <div className="venue-page-section mid">
