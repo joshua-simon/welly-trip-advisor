@@ -315,6 +315,15 @@ font-family: Helvetica;
     margin:0;
 }
 
+.review-notRegistered{
+    text-decoration: none;
+    background-color:rgb(78, 78, 241);
+    color:white;
+    letter-spacing: 1px;
+    padding:1%;
+    border-radius: 2%;
+}
+
 .review-section-reviews{
 margin-bottom:5em;
 

@@ -17,7 +17,7 @@ const ReviewSection =  ({ filteredVenue,id }) => {
                 <Link to={`/write-review/${id}`}>
                   <p>Write a review</p>
                 </Link>
-              ) : <></>
+              ) : <p className='review-notRegistered'>Register to write reviews!</p>
             }
         </div>
         <div className="review-section-reviews">
