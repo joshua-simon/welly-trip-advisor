@@ -1,16 +1,24 @@
+import { useContext } from 'react'
+import { FirebaseContext } from '../../FirebaseContext';
 import { Link } from 'react-router-dom'
 import { convertToStars } from '../../helperFunctions'
 
 const ReviewSection =  ({ filteredVenue,id }) => {
+
+  const { activeUser } =  useContext(FirebaseContext)
 
   return (
     <div>
       <div className="review-section-container">
         <div className="review-section-header">
           <h1>Reviews</h1>
-            <Link to={`/write-review/${id}`}>
-            <p>Write a review</p>
-            </Link>
+            {
+              activeUser ? (
+                <Link to={`/write-review/${id}`}>
+                  <p>Write a review</p>
+                </Link>
+              ) : <></>
+            }
         </div>
         <div className="review-section-reviews">
           {filteredVenue.map((venue) => {

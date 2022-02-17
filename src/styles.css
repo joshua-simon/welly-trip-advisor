@@ -110,6 +110,7 @@ color:white;
     /* margin-top: 1em; */
     padding:3%;
     border-radius: 1%;
+    margin-bottom:5em;
 }
 
 
@@ -310,6 +311,10 @@ font-family: Helvetica;
     letter-spacing: 1px;
     padding:1%;
     border-radius: 2%;
+}
+
+.review-section-header a p{
+    margin:0;
 }
 
 .review-section-reviews{

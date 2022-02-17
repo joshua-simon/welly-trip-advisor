@@ -1,14 +1,7 @@
+import { useEffect,useState } from 'react'
 import { convertToStars } from "../../helperFunctions";
 
 const MidSection = ({ filteredVenue }) => {
-
-  const getRatings =  () => {
-  
-  }
-
-console.log(getRatings())
-
-
 
   return (
     <div className="venue-page-mid">
@@ -25,16 +18,21 @@ console.log(getRatings())
               </p>
               <div className="ratings">
                 <h3>Ratings</h3>
-                <div className="ratings-item">
-                  {/* <p>Food</p> */}
-                  {/* <p>{convertToStars(venueRatings.food)}</p>
+                  {/* {venue.reviews.map((review) => {
+                    return(
+                      <div className="ratings-item">
+                    <p>Food</p> 
+                  <p>{convertToStars(review.ratingFood)}</p>
                   <p>Service</p>
-                  <p>{convertToStars(venueRatings.service)}</p>
+                  <p>{convertToStars(review.ratingService)}</p>
                   <p>Value</p>
-                  <p>{convertToStars(venueRatings.value)}</p>
+                  <p>{convertToStars(review.ratingValue)}</p>
                   <p>Atmosphere</p>
-                  <p>{convertToStars(venueRatings.atmosphere)}</p> */}
-                </div>
+                  <p>{convertToStars(review.ratingAtmosphere)}</p>
+                    </div>
+                    )
+                  })}
+    */}
               </div>
             </div>
             <div className="venue-page-section mid">

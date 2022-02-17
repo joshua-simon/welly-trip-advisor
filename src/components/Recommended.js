@@ -15,7 +15,7 @@ const Reccomended = () => {
         </>
       ) : (
         <>
-          <p className="recommended">Recommended for Josh</p>
+          <p className="recommended">Recommended venues</p>
           <VenueCard venueData = {venueData}  />
         </>
       )}
