@@ -312,6 +312,10 @@ font-family: Helvetica;
     border-radius: 2%;
 }
 
+.review-section-reviews{
+margin-bottom:5em;
+}
+
 .review-section-reviews-container{
     display:flex;
     flex-direction: row;
@@ -325,6 +329,7 @@ font-family: Helvetica;
     display:flex;
     align-items:center;
     color:#587a25;
+    min-width:8em;
 }
 
 .review-section-reviews-reviewDetails{

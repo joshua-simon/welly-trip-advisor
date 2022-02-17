@@ -18,7 +18,7 @@ const VenueCard = ({ venueData }) => {
                   {convertToStars(item.averageRating)}{" "}
                   {`(${item.numRatings} reviews)`}
                 </p>
-                <p className="venueCard-type">{item.type} | Address</p>
+                <p className="venueCard-type">{item.type} | {item.address}</p>
               </div>
             </div>
           );

@@ -16,11 +16,11 @@ const VenueDetails = ({filteredVenue}) => {
                         </div>
                         <div className="inner-flex-two">
                             <img src="https://img.icons8.com/external-prettycons-lineal-prettycons/49/000000/external-location-pin-essentials-prettycons-lineal-prettycons.png"/>
-                            <p>Address</p>
+                            <p>{venue.address}</p>
                             <img src="https://img.icons8.com/ios/50/000000/apple-phone.png"/>
-                            <p>Phone number</p>
+                            <p>{venue.phone}</p>
                             <img src="https://img.icons8.com/material-outlined/24/000000/laptop.png"/>
-                            <p>Website</p>
+                            <p><a href = {venue.website}>Website</a></p>
                         </div>
                     </div>
                 )
