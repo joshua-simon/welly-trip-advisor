@@ -11,7 +11,7 @@ const ReviewSection =  ({ filteredVenue,id }) => {
     <div>
       <div className="review-section-container">
         <div className="review-section-header">
-          <h1>Reviews</h1>
+          <h2>Reviews</h2>
             {
               activeUser ? (
                 <Link to={`/write-review/${id}`}>

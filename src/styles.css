@@ -165,7 +165,6 @@ font-family: Helvetica;
     flex-direction: column;
     background-color: white;
     margin-top:0.5em;
-    border-radius:2%;
     padding:1%;
 }
 
@@ -214,13 +213,12 @@ font-family: Helvetica;
 .venue-page-mid{
     display:flex;
     flex-direction:row;
-    justify-content: space-around;
+    justify-content:start;
     margin-top:1em;
 }
 
 .venue-page-section{
     background-color:white;
-    border-radius:3%;
     min-width:auto; 
     padding-left:1em;
     padding-right:1em;
@@ -301,7 +299,7 @@ font-family: Helvetica;
     color:#587a25;
     justify-content: space-between;
     align-items: center;
-    margin-bottom:1em;
+    border-bottom:1px solid rgb(177, 175, 175);
 }
 
 .review-section-header a{
@@ -319,6 +317,7 @@ font-family: Helvetica;
 
 .review-section-reviews{
 margin-bottom:5em;
+
 }
 
 .review-section-reviews-container{
@@ -329,6 +328,7 @@ margin-bottom:5em;
     padding:1%;
     border-bottom:1px solid rgb(177, 175, 175);
 }
+
 
 .review-section-reviews-userDetails{
     display:flex;
