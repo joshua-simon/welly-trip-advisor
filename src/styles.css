@@ -39,27 +39,33 @@ color:#587a25;
 font-size: x-large;
 }
 
-.svg-container{
-    display:flex;
-    flex-direction:row;
+.container-links{
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    transform: translateX(-15%);
 }
 
+.container-links img{
+    width:25px;
+    height:25px;
+    padding:5px;
+}
 
-.svg-container .login-register{
+.login-register{
     text-decoration: none;
     padding:2%;
     transform: translateX(-10%);
     background-color:rgb(110, 110, 248);
     color:white;
     border-radius: 5%;
-    margin:1%;
+    margin:2%;
     font-size: small;
 }
 
 
 
-/* Header */
+/* Options */
 
 .options-container{
     height:7em;

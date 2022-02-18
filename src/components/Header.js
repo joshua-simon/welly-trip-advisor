@@ -26,10 +26,10 @@ const handleClick = (e) => {
                     <img src="https://img.icons8.com/ios/50/000000/tripadvisor.png"/>
                     <p>Wellyadvisor</p>
                 </div>
-                <div className = 'svg-container' >
-                    <NavLink to = '/' className = 'home-icon'>
-                    <img src="https://img.icons8.com/ios/50/000000/home--v1.png"/>
-                     </NavLink>
+                <div className='container-links'>
+                    <NavLink to = '/'>
+                        <img src="https://img.icons8.com/ios/50/000000/home--v1.png"/>
+                    </NavLink>
                     <img onClick = {handleClick} src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-logout-interface-dreamstale-lineal-dreamstale.png" style = {{cursor:'pointer'}}/>
                     {!activeUser ? <NavLink to = '/login' className = 'login-register'>Login</NavLink> : null }
                     <NavLink to = '/signup' className = 'login-register'>
