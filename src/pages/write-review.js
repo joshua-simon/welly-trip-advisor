@@ -89,8 +89,8 @@ const WriteReview =  () => {
                         <div className='write-review-top-img'>
                             <img src = {venue.photoUrl}/>
                             <div className='write-review-top-text'>
-                                <p>{venue.name}</p>
-                                <p>Venue address</p>
+                                <h2 style = {{color:'#587a25'}}>{`${venue.name} (${venue.reviews.length} reviews)`}</h2>
+                                <p>{venue.address}</p>
                             </div>
                         </div>
                     )
