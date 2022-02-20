@@ -3,6 +3,7 @@ import { convertToStars } from '../helperFunctions'
 
 
 const VenueCard = ({ venueData }) => {
+  console.log(venueData.reviews)
   return (
     <div className="venueCard-container">
       {venueData &&
@@ -16,7 +17,7 @@ const VenueCard = ({ venueData }) => {
                 <p className="venueCard-header">{item.name}</p>
                 <p className="venueCard-ratings">
                   {convertToStars(item.averageRating)}{" "}
-                  {`(${item.numRatings} reviews)`}
+                  {`(${item.reviews.length} reviews)`}
                 </p>
                 <p className="venueCard-type">{item.type} | {item.address}</p>
               </div>

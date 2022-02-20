@@ -1,12 +1,12 @@
 import { useState,useEffect } from 'react'
 import { firebase } from './firebaseConfig'
 
-export function useVenues (){
+export  function useVenues (){
   const [venues, setVenues] = useState([]);
   useEffect(() => {
     const venueArray = [];
-    const getAllVenues = () => {
-      firebase
+    const getAllVenues =  () => {
+       firebase
         .firestore()
         .collection("venues")
         .get()

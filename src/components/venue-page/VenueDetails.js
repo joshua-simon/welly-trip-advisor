@@ -11,7 +11,7 @@ const VenueDetails = ({filteredVenue}) => {
                         <img className='header-photo' src = {venue.photoUrl}/>
                         <div className="inner-flex-one">
                             <p>{convertToStars(venue.averageRating)}</p>
-                            <p>({`${venue.numRatings} reviews`})</p>
+                            <p>({`${venue.reviews.length} reviews`})</p>
                             <p>{venue.type}</p>
                         </div>
                         <div className="inner-flex-two">

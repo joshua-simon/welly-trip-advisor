@@ -17,7 +17,6 @@ const VenueType = () => {
        }
     })
 
-    console.log(filteredVenue.length)
 
  return(
      <div>

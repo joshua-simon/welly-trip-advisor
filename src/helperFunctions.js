@@ -10,4 +10,11 @@ export const convertToStars = (stars) => {
     return arr;
   }
 
+export const getAverageRating = (rating) => {
+    const ratingInt = rating.map(item => parseInt(item))
+    const ratingSum = ratingInt.reduce((x,y) => x+y)
+    const ratingAve = Math.round(ratingSum/rating.length)
+    return ratingAve
+  }
+
   
