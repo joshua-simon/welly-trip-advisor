@@ -4,8 +4,18 @@ import { getAverageRating } from '../../helperFunctions';
 
 const MidSection =  ({ filteredVenue }) => {
 
+    const [{
+      foodRating,
+      serviceRating,
+      valueRating,
+      atmosphereRating}, setFoodRating] 
+      = useState({
+        foodRating:[],
+        serviceRating:[],
+        valueRating:[],
+        atmosphereRating:[]
+      })
 
-    const [foodRating, setFoodRating] = useState()
     useEffect(() => {
       const doIt = async function () {
         const extractRatings =  () => {
@@ -19,7 +29,7 @@ const MidSection =  ({ filteredVenue }) => {
            valueRatings.push(rating.ratingValue)
            atmosphereRatings.push(rating.ratingAtmosphere)
           })
-          return foodRatings
+          return {foodRatings,serviceRatings,valueRatings,atmosphereRatings}
         }
         const ratings = await extractRatings()
         const getRating =  (rating) =>{
@@ -28,8 +38,19 @@ const MidSection =  ({ filteredVenue }) => {
           const ratingAve = Math.round(ratingSum/rating.length)
           return ratingAve
           }
-        const foodRating = getRating(ratings)
-        setFoodRating(foodRating) 
+        const {foodRatings} = extractRatings()
+        const {serviceRatings} = extractRatings()
+        const {valueRatings} = extractRatings()
+        const {atmosphereRatings} = extractRatings()
+        const foodRating = getRating(foodRatings)
+        const serviceRating = getRating(serviceRatings)
+        const valueRating = getRating(valueRatings)
+        const atmosphereRating = getRating(atmosphereRatings)
+        setFoodRating({
+          foodRating:foodRating,
+          serviceRating:serviceRating,
+          valueRating:valueRating,
+          atmosphereRating:atmosphereRating}) 
       }
       doIt()
     }, [filteredVenue])
@@ -52,6 +73,9 @@ const MidSection =  ({ filteredVenue }) => {
               <div className="ratings">
                 <h3>Ratings</h3>
                 <p>Food{convertToStars(foodRating)}</p>
+                <p>Value{convertToStars(valueRating)}</p>
+                <p>Service{convertToStars(serviceRating)}</p>
+                <p>Atmosphere{convertToStars(atmosphereRating)}</p>
               </div>
             </div>
             <div className="venue-page-section mid">
