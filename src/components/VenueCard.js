@@ -32,7 +32,7 @@ const VenueCard = ({ venueData }) => {
                 <p className="venueCard-header">{item.name}</p>
                 <p className="venueCard-ratings">
                   {convertToStars(item.averageRating)}{" "}
-                  {`(${item.reviews.length} reviews)`}
+                  {item.reviews.length === 1 ? (`${item.reviews.length} review`) : (`${item.reviews.length} reviews`) }
                 </p>
                 <p className="venueCard-type">{item.type} | {item.address}</p>
               </div>

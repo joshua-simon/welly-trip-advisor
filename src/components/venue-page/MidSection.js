@@ -65,6 +65,7 @@ const MidSection =  ({ filteredVenue }) => {
   return (
     <div className="venue-page-mid">
       {filteredVenue.map((venue) => {
+        {const review =  venue.reviews.length == 1 ? 'review' : 'reviews'}
         return (
           <>
             <div className="venue-page-section left">
@@ -73,7 +74,7 @@ const MidSection =  ({ filteredVenue }) => {
                 {venue.averageRating}
                 {` `}
                 {convertToStars(venue.averageRating)}
-                {`  `}({`${venue.reviews.length} reviews`})
+                {`  `}{venue.reviews.length === 1 ? (`${venue.reviews.length} review`) : (`${venue.reviews.length} reviews`) }
               </p>
               <div className="ratings">
                 <h3>Ratings</h3>
