@@ -3,6 +3,7 @@ import { FirebaseContext } from '../../FirebaseContext';
 import { Link } from 'react-router-dom'
 import { convertToStars } from '../../helperFunctions'
 
+
 const ReviewSection =  ({ filteredVenue,id }) => {
 
   const { activeUser } =  useContext(FirebaseContext)
@@ -24,9 +25,12 @@ const ReviewSection =  ({ filteredVenue,id }) => {
           {filteredVenue.map((venue) => {
             return(
               venue.reviews.map((review) => {
+                console.log(review.username)
                 return(
                   <div className='review-section-reviews-container'>
                     <div className='review-section-reviews-userDetails'>
+                      
+                      <img src = {`/profilePics/${review.username}.jpg`}/>
                       <p>{`Review by ${review.username}`}</p>
                     </div>
                     <div className='review-section-reviews-reviewDetails'>

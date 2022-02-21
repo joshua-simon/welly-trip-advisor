@@ -1,9 +1,24 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { convertToStars } from '../helperFunctions'
 
 
 const VenueCard = ({ venueData }) => {
-  console.log(venueData.reviews)
+
+
+  // useEffect(() => {
+  //   const GetVenueRating = () => {
+  //     let venueReviews = []
+  //     venueData.map((item) => {
+  //       venueReviews.push(item.reviews)
+  //     })
+  //     setReviews(venueReviews)
+  //   }
+  //   GetVenueRating()
+  // },[])
+
+ 
+
   return (
     <div className="venueCard-container">
       {venueData &&

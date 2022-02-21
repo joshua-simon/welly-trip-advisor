@@ -4,56 +4,61 @@ import { getAverageRating } from '../../helperFunctions';
 
 const MidSection =  ({ filteredVenue }) => {
 
-    const [{
-      foodRating,
-      serviceRating,
-      valueRating,
-      atmosphereRating}, setFoodRating] 
-      = useState({
-        foodRating:[],
-        serviceRating:[],
-        valueRating:[],
-        atmosphereRating:[]
-      })
+    const [
+      { foodRating, serviceRating, valueRating, atmosphereRating },
+      setFoodRating,
+    ] = useState({
+      foodRating: [],
+      serviceRating: [],
+      valueRating: [],
+      atmosphereRating: [],
+    });
 
     useEffect(() => {
-      const doIt = async function () {
-        const extractRatings =  () => {
-          const foodRatings =  []
-          const serviceRatings = []
-          const valueRatings = []
-          const atmosphereRatings = []
-           filteredVenue.length>0 && filteredVenue[0].reviews.map((rating) => {
-           foodRatings.push(rating.ratingFood)
-           serviceRatings.push(rating.ratingService)
-           valueRatings.push(rating.ratingValue)
-           atmosphereRatings.push(rating.ratingAtmosphere)
-          })
-          return {foodRatings,serviceRatings,valueRatings,atmosphereRatings}
-        }
-        const ratings = await extractRatings()
-        const getRating =  (rating) =>{
-          const ratingInt =  rating.map((item) => parseInt(item))
-          const ratingSum = ratingInt.reduce((x,y) => x+y)
-          const ratingAve = Math.round(ratingSum/rating.length)
-          return ratingAve
-          }
-        const {foodRatings} = extractRatings()
-        const {serviceRatings} = extractRatings()
-        const {valueRatings} = extractRatings()
-        const {atmosphereRatings} = extractRatings()
-        const foodRating = getRating(foodRatings)
-        const serviceRating = getRating(serviceRatings)
-        const valueRating = getRating(valueRatings)
-        const atmosphereRating = getRating(atmosphereRatings)
+      const setRatings = async function () {
+        const extractRatings = () => {
+          const foodRatings = [];
+          const serviceRatings = [];
+          const valueRatings = [];
+          const atmosphereRatings = [];
+          filteredVenue.length > 0 &&
+            filteredVenue[0].reviews.map((rating) => {
+              foodRatings.push(rating.ratingFood);
+              serviceRatings.push(rating.ratingService);
+              valueRatings.push(rating.ratingValue);
+              atmosphereRatings.push(rating.ratingAtmosphere);
+            });
+          return {
+            foodRatings,
+            serviceRatings,
+            valueRatings,
+            atmosphereRatings,
+          };
+        };
+        const ratings = await extractRatings();
+        const getRating = (rating) => {
+          const ratingInt = rating.map((item) => parseInt(item));
+          const ratingSum = ratingInt.reduce((x, y) => x + y);
+          const ratingAve = Math.round(ratingSum / rating.length);
+          return ratingAve;
+        };
+        const { foodRatings } = extractRatings();
+        const { serviceRatings } = extractRatings();
+        const { valueRatings } = extractRatings();
+        const { atmosphereRatings } = extractRatings();
+        const foodRating = getRating(foodRatings);
+        const serviceRating = getRating(serviceRatings);
+        const valueRating = getRating(valueRatings);
+        const atmosphereRating = getRating(atmosphereRatings);
         setFoodRating({
-          foodRating:foodRating,
-          serviceRating:serviceRating,
-          valueRating:valueRating,
-          atmosphereRating:atmosphereRating}) 
-      }
-      doIt()
-    }, [filteredVenue])
+          foodRating: foodRating,
+          serviceRating: serviceRating,
+          valueRating: valueRating,
+          atmosphereRating: atmosphereRating,
+        });
+      };
+      setRatings();
+    }, [filteredVenue]);
 
 
 
