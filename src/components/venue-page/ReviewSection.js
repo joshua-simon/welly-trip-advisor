@@ -27,10 +27,10 @@ const ReviewSection =  ({ filteredVenue,id }) => {
               venue.reviews.map((review) => {
                 console.log(review.username)
                 return(
-                  <div className='review-section-reviews-container'>
+                  <div className='review-section-reviews-container' key = {review.title}>
                     <div className='review-section-reviews-userDetails'>
                       
-                      <img src = {`/profilePics/${review.username}.jpg`}/>
+                      <img src = {`/profilePics/${review.username}.jpg`} alt = "user"/>
                       <p>{`Review by ${review.username}`}</p>
                     </div>
                     <div className='review-section-reviews-reviewDetails'>

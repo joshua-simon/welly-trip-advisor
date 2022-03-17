@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { convertToStars } from '../helperFunctions'
-import { getAverageRating } from '../helperFunctions';
+
 
 
 const VenueCard = ({ venueData }) => {
@@ -12,9 +11,9 @@ const VenueCard = ({ venueData }) => {
       {venueData &&
         venueData.map((item) => {
           return (
-            <div className="venueCard-item">
+            <div className="venueCard-item" key = {item.id}>
               <Link to={`/venue/${item.id}`} style={{ textDecoration: "none" }}>
-                <img src={item.photoUrl} />
+                <img src={item.photoUrl} alt = {item.name} />
               </Link>
               <div className="venueCard-info">
                 <p className="venueCard-header">{item.name}</p>

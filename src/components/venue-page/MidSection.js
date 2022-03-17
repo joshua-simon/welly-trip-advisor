@@ -1,6 +1,6 @@
 import { useEffect,useState } from 'react'
 import { convertToStars } from "../../helperFunctions";
-import { getAverageRating } from '../../helperFunctions';
+
 
 const MidSection =  ({ filteredVenue }) => {
 
@@ -65,10 +65,9 @@ const MidSection =  ({ filteredVenue }) => {
   return (
     <div className="venue-page-mid">
       {filteredVenue.map((venue) => {
-        {const review =  venue.reviews.length == 1 ? 'review' : 'reviews'}
         return (
           <>
-            <div className="venue-page-section left">
+            <div className="venue-page-section left" key = {venue.name}>
               <h2>Ratings and reviews</h2>
               <p>
                 {venue.averageRating}
